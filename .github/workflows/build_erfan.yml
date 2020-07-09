@@ -1,4 +1,4 @@
-name: Generic
+name: build_erfan
 
 on:
   watch:
