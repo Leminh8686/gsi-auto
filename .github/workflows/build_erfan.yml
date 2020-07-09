@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://bit.ly/2O2vbKF
-  ROM_NAME: Generic
+  ROM_URL: https://oxygenos.oneplus.net/OnePlus6TOxygen_34_OTA_045_all_2004142152_09a6b6789a7843e6.zip
+  ROM_NAME: OxygenOS
   BUILD_AB: true
   BUILD_AONLY: false
-  ROM_AONLY: tesstA.7z
-  ROM_AB: Tesstab.7z
+  ROM_AONLY: oneplus6.7z
+  ROM_AB: oneplus6AB.7z
 
 jobs:
   build:
