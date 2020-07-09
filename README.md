@@ -14,4 +14,4 @@ Generic MIUI OxygenOS Pixel
 # android 11
 Generic Pixel
 # Buld thôi nào
-click star để bắt đầu build , link rom sẽ nằm ở phần upload
+click star để bắt đầu build , click tab actions để xem quá trình build , link rom nằm ở phần upload
