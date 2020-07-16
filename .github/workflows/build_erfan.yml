@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://oxygenos.oneplus.net/OnePlus6TOxygen_34_OTA_045_all_2004142152_09a6b6789a7843e6.zip
-  ROM_NAME: OxygenOS
+  ROM_URL: https://bigota.d.miui.com/V11.0.1.0.QFLCNXM/miui_ONCLITE_V11.0.1.0.QFLCNXM_d1f5f47261_10.0.zip
+  ROM_NAME: miuiredmi7
   BUILD_AB: true
   BUILD_AONLY: false
   ROM_AONLY: oneplus6.7z
-  ROM_AB: oneplus6AB.7z
+  ROM_AB: redmi7AB.7z
 
 jobs:
   build:
