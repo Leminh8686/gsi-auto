@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://oxygenos.oneplus.net/OnePlus6TOxygen_34_OTA_045_all_2004142152_09a6b6789a7843e6.zip
-  ROM_NAME: OxygenOS
+  ROM_URL: https://android.googleapis.com/packages/ota-api/vsmart_v620a_v620aopen/f43a5601e88c83632682717a5a45c933f959feb3.zip
+  ROM_NAME: Generic
   BUILD_AB: true
   BUILD_AONLY: false
-  ROM_AONLY: oneplus6.7z
-  ROM_AB: oneplus6AB.7z
+  ROM_AONLY: Vos_A.7z
+  ROM_AB: VosAB_2207.7z
 
 jobs:
   build:
