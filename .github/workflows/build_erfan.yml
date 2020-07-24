@@ -5,12 +5,13 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://doc-0k-58-docs.googleusercontent.com/docs/securesc/9958dkk65m56rtamkto5snr3o9559psa/oku8fjtugj2s0t6d2soirer7lkblfplo/1595556225000/03529853435263376064/06291942308480973913/1bke7Z4VHolBwfGW4UFS1WoHK3YCDrdnW?e=download&authuser=0&nonce=oifcdjm23vq3c&user=06291942308480973913&hash=sslb3ik14qdqhet6j0hio93k8qrjdr3r
+  ROM_URL: Thinhx2, [24.07.20 07:54]
+https://otafsg1.h2os.com/patch/amazone2/GLO/NordOxygen/NordOxygen_14.I.04_GLO_004_2007170032/NordOxygen_14_OTA_004_all_2007170032_c357304482c23.zip
   ROM_NAME: Generic
   BUILD_AB: true
   BUILD_AONLY: false
-  ROM_AONLY: Masik_A.7z
-  ROM_AB: MasikP_15.1.7z
+  ROM_AONLY: oxygen_nord.7z
+  ROM_AB: Oxygen_nord.7z
 
 jobs:
   build:
