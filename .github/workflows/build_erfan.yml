@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://netix.dl.sourceforge.net/project/pixelplusui-project/Stable/whyred/PixelPlusUI_1.6.1_whyred-10.0-20200711-1441-OFFICIAL.zip
+  ROM_URL: https://netix.dl.sourceforge.net/project/xtended/beryllium/Xtended-XQ-v11.5-beryllium-OFFICIAL-20200725.zip
   ROM_NAME: Generic
   BUILD_AB: true
   BUILD_AONLY: false
-  ROM_AONLY: PPUI.7z
-  ROM_AB: PPUI.7z
+  ROM_AONLY: MSM_Extended.7z
+  ROM_AB: MSM_Extended.7z
 
 jobs:
   build:
