@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://netix.dl.sourceforge.net/project/xtended/beryllium/Xtended-XQ-v11.5-beryllium-OFFICIAL-20200725.zip
+  ROM_URL: https://netix.dl.sourceforge.net/project/ancientrom/ginkgo/AncientOS-CIVILIZATION-v3.9-ginkgo-PRIMEVAL-20200725-1209-Vanilla.zip
   ROM_NAME: Generic
   BUILD_AB: true
   BUILD_AONLY: false
-  ROM_AONLY: MSM_Extended.7z
-  ROM_AB: MSM_Extended.7z
+  ROM_AONLY: AncientOS.7z
+  ROM_AB: AncientOS.7z
 
 jobs:
   build:
