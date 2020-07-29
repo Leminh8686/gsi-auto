@@ -5,7 +5,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://doc-10-9g-docs.googleusercontent.com/docs/securesc/9958dkk65m56rtamkto5snr3o9559psa/f7f3k806pa75ejr7lc8p35pems8m35ui/1595980725000/17377618634905613461/06291942308480973913/1-4zdIQD-htDzK5L2XNpFI3FtOCWFCSex?e=download&authuser=0
+  ROM_URL: https://drive.google.com/uc?export=download&id=1-4zdIQD-htDzK5L2XNpFI3FtOCWFCSex
   ROM_NAME: Generic
   BUILD_AB: true
   BUILD_AONLY: false
