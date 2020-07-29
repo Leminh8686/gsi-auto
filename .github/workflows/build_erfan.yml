@@ -9,7 +9,7 @@ env:
   ROM_NAME: Generic
   BUILD_AB: true
   BUILD_AONLY: false
-    ROM_AONLY: ONEUI.7z
+  ROM_AONLY: ONEUI.7z
   ROM_AB: ONEUI.7z
 
 jobs:
