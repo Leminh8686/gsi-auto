@@ -5,8 +5,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://ava4.androidfilehost.com/dl/yGnb_yxm52BgD0mBok6A6Q/1596117340/4349826312261732298/hadesRom_Q_Stock_v1.0_9820-BTA8.zip
-  ROM_NAME: Generic
+  ROM_URL: https://ava4.androidfilehost.com/dl/TIsucOOgUcGV1XVqu7JJBA/1596118157/4349826312261732298/hadesRom_Q_Stock_v1.0_9820-BTA8.zip
   BUILD_AB: true
   BUILD_AONLY: false
   ROM_AONLY: ONEUI.7z
