@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://downloads.oppo.com.s3.amazonaws.com/firmware/CPH2001/CPH2001PUEX_11_OTA_0350_all_vMY7f8a9QqUH.ozip
+  ROM_URL: https://ava4.androidfilehost.com/dl/yGnb_yxm52BgD0mBok6A6Q/1596117340/4349826312261732298/hadesRom_Q_Stock_v1.0_9820-BTA8.zip
   ROM_NAME: Generic
   BUILD_AB: true
   BUILD_AONLY: false
-  ROM_AONLY: ColorOS.7z
-  ROM_AB: ColorOS.7z
+    ROM_AONLY: ONEUI.7z
+  ROM_AB: ONEUI.7z
 
 jobs:
   build:
