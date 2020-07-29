@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://drive.google.com/uc?export=download&id=1-4zdIQD-htDzK5L2XNpFI3FtOCWFCSex
+  ROM_URL: http://downloads.oppo.com.s3.amazonaws.com/firmware/CPH2001/CPH2001PUEX_11_OTA_0350_all_vMY7f8a9QqUH.ozip
   ROM_NAME: Generic
   BUILD_AB: true
   BUILD_AONLY: false
-  ROM_AONLY: MIUI_ROG.7z
-  ROM_AB: MIUI_ROG_EDITION.7z
+  ROM_AONLY: ColorOS.7z
+  ROM_AB: ColorOS.7z
 
 jobs:
   build:
