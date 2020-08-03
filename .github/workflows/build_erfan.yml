@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://android.googleapis.com/packages/ota-api/vsmart_v620a_v620aopen/f43a5601e88c83632682717a5a45c933f959feb3.zip
-  ROM_NAME: Generic
+  ROM_URL: https://doc-0c-0s-docs.googleusercontent.com/docs/securesc/3pajarsp0p663bh2lu7gv1ipco5ks1pj/gq76gouvcs6u6f0r30d7lnkectvao70f/1596418500000/16813357013647339782/11758033688735519154/1-1EY9bGTYMKeZt3aEkRYecj9vDWJaTUu?e=download&authuser=0&nonce=8oh2v2l72mhoc&user=11758033688735519154&hash=qqsdv4i7adld4ec28tlfbikhq4islmf7
+  ROM_NAME: MIUI
   BUILD_AB: true
   BUILD_AONLY: false
   ROM_AONLY: Vos_A.7z
-  ROM_AB: VosAB_2207.7z
+  ROM_AB: MIUI_RMX1801.7z
 
 jobs:
   build:
