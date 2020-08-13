@@ -74,4 +74,4 @@ jobs:
          if: env.BUILD_AB == 'true'
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer bit $ROM_AB
+              ./transfer we $ROM_AB
