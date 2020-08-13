@@ -36,21 +36,21 @@ jobs:
             sudo -E apt-get -qq install git openjdk-8-jdk p7zip
        
        - name: Clone ErfanGSI Source Code
-         run: git clone --recurse-submodules https://github.com/HitaloSama/ErfanGSIs
+         run: t clone https://github.com/together08/JvlongGSIs.git --depth=1
        
        - name: Setting up ErfanGSI requirements
          run: |
-              sudo chmod -R 777 ErfanGSIs
-              cd ErfanGSIs
+              sudo chmod -R 777 JvlongGSIs
+              cd JvlongGSIs
               sudo bash setup.sh
        
        - name: Download Stock Rom & Generate Aonly GSI
          if: env.BUILD_AONLY == 'true'
-         run: sudo ./ErfanGSIs/url2GSI.sh -a $ROM_URL $ROM_NAME
+         run: sudo ./JvlongGSIs/make.sh -a $ROM_URL $ROM_NAME
        
        - name: 7z Aonly GSI
          if: env.BUILD_AONLY == 'true'
-         run: 7za a -t7z -r $ROM_AONLY ErfanGSIs/output/*
+         run: 7za a -t7z -r $ROM_AONLY JvlongGSIs/output/*
        
        - name: Upload Aonly GSI to WeTransfer
          if: env.BUILD_AONLY == 'true'
@@ -60,15 +60,15 @@ jobs:
            
        - name: Clear output
          if: env.BUILD_AB == 'true'
-         run: sudo rm -rf ErfanGSIs/output/*
+         run: sudo rm -rf JvlongGSIs/output/*
          
        - name: Download Stock Rom & Generate AB GSI
          if: env.BUILD_AB == 'true'
-         run: sudo ./ErfanGSIs/url2GSI.sh -b $ROM_URL $ROM_NAME
+         run: sudo ./JvlongGSIs/make.sh -b $ROM_URL $ROM_NAME
 
        - name: 7z AB GSI
          if: env.BUILD_AB == 'true'
-         run: 7za a -t7z -r $ROM_AB ErfanGSIs/output/*
+         run: 7za a -t7z -r $ROM_AB JvlongGSIs/output/*
 
        - name: Upload AB GSI to WeTransfer
          if: env.BUILD_AB == 'true'
