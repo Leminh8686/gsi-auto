@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://android.googleapis.com/packages/ota-api/vsmart_v620a_v620aopen/f43a5601e88c83632682717a5a45c933f959feb3.zip
-  ROM_NAME: Generic
+  ROM_URL: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-WEEKLY-RELEASES/20.5.14/xiaomi.eu_multi_HMNote5Pro_20.5.14_v12-9.zip/download?use_mirror=netix&download=&failedmirror=deac-riga.dl.sourceforge.net
+  ROM_NAME: miui12
   BUILD_AB: true
   BUILD_AONLY: false
   ROM_AONLY: Vos_A.7z
-  ROM_AB: VosAB_2207.7z
+  ROM_AB: miui12
 
 jobs:
   build:
