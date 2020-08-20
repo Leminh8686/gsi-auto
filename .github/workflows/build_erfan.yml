@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://android.googleapis.com/packages/ota-api/vsmart_v620a_v620aopen/f43a5601e88c83632682717a5a45c933f959feb3.zip
-  ROM_NAME: Generic
+  ROM_URL: https://android.googleapis.com/packages/ota-api/vsmart_coconut_coconutopen/c796394d33a560ce343bca50bb69ff6c1abb4ac8.zip
+  ROM_NAME: VOS
   BUILD_AB: true
   BUILD_AONLY: false
   ROM_AONLY: Vos_A.7z
-  ROM_AB: VosAB_2207.7z
+  ROM_AB: VosAB_2008.7z
 
 jobs:
   build:
@@ -36,7 +36,7 @@ jobs:
             sudo -E apt-get -qq install git openjdk-8-jdk p7zip
        
        - name: Clone ErfanGSI Source Code
-         run: git clone --recurse-submodules https://github.com/HitaloSama/ErfanGSIs
+         run: git clone --recurse-submodules https://github.com/Leminh8686/ErfanGSIs
        
        - name: Setting up ErfanGSI requirements
          run: |
@@ -75,3 +75,6 @@ jobs:
          run: |
               curl -sL https://git.io/file-transfer | sh
               ./transfer wet $ROM_AB
+       - name: Print build info
+         run: |
+              cat ErfanGSIs/output/*-Aonly-*.txt
