@@ -6,7 +6,7 @@ on:
     
 env:
   ROM_URL: https://android.googleapis.com/packages/ota-api/vsmart_coconut_coconutopen/c796394d33a560ce343bca50bb69ff6c1abb4ac8.zip
-  ROM_NAME: VOS
+  ROM_NAME: Generic
   BUILD_AB: true
   BUILD_AONLY: false
   ROM_AONLY: Vos_A.7z
