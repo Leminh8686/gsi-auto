@@ -10,7 +10,7 @@ env:
   BUILD_AB: true
   BUILD_AONLY: false
   ROM_AONLY: Vos_A.7z
-  ROM_AB: VosAB_2008.7z
+  ROM_AB: VosAB.7z
 
 jobs:
   build:
@@ -47,6 +47,10 @@ jobs:
        - name: Download Stock Rom & Generate Aonly GSI
          if: env.BUILD_AONLY == 'true'
          run: sudo ./ErfanGSIs/url2GSI.sh -a $ROM_URL $ROM_NAME
+
+       - name: Print build info
+         run: |
+              cat ErfanGSIs/output/*-Aonly-*.txt
        
        - name: 7z Aonly GSI
          if: env.BUILD_AONLY == 'true'
