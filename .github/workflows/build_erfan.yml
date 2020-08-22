@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://android.googleapis.com/packages/ota-api/vsmart_coconut_coconutopen/c796394d33a560ce343bca50bb69ff6c1abb4ac8.zip
-  ROM_NAME: Generic
+  ROM_URL: https://gd.secco.workers.dev/Mirrorbot/@pritishsingh07_whyred_20.8.13_10.zip
+  ROM_NAME: MIUI
   BUILD_AB: true
   BUILD_AONLY: false
-  ROM_AONLY: Vos_A.7z
-  ROM_AB: VosAB.7z
+  ROM_AONLY: Miui.7z
+  ROM_AB: MiuiAB.7z
 
 jobs:
   build:
