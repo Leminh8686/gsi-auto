@@ -5,8 +5,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://gd.secco.workers.dev/Mirrorbot/@pritishsingh07_whyred_20.8.13_10.zip
-  ROM_NAME: MIUI
+  ROM_URL: https://master.dl.sourceforge.net/project/evolution-x/RMX1901/EvolutionX_4.5_RMX1901-10.0-20200716-1312-OFFICIAL.zip
+  ROM_NAME: EvolutionX
   BUILD_AB: true
   BUILD_AONLY: false
   ROM_AONLY: Miui.7z
