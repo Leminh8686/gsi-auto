@@ -75,6 +75,3 @@ jobs:
          run: |
               curl -sL https://git.io/file-transfer | sh
               ./transfer wet $ROM_AB
-       - name: Print build info
-         run: |
-              cat ErfanGSIs/output/*-ABonly-*.txt
