@@ -48,10 +48,6 @@ jobs:
          if: env.BUILD_AONLY == 'true'
          run: sudo ./ErfanGSIs/url2GSI.sh -a $ROM_URL $ROM_NAME
 
-       - name: Print build info
-         run: |
-              cat ErfanGSIs/output/*-Aonly-*.txt
-       
        - name: 7z Aonly GSI
          if: env.BUILD_AONLY == 'true'
          run: 7za a -t7z -r $ROM_AONLY ErfanGSIs/output/*
