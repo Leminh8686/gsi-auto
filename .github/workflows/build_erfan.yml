@@ -69,3 +69,11 @@ jobs:
        - name: Print build info
          run: |
               cat ErfanGSIs/output/*-Aonly-*.txt
+
+       - name: Upload Link to GitHub
+         run: |
+           git config --global user.email "19506021+Leminh8686@users.noreply.github.com"
+           git config --global user.name "Leminh8686"
+           git add link.txt
+           git commit -sm "upload link"
+           git push
