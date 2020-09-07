@@ -6,6 +6,9 @@ on:
 #  push:
 #    branches:
 #      - master
+#  pull_request:
+#    branches:
+#      - master
 #    paths:
 #      - '.config'
 #  schedule:
@@ -14,18 +17,18 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus6TOxygen/OnePlus6TOxygen_34.J.47_GLO_047_2007171912/OnePlus6TOxygen_34_OTA_047_all_2007171912_ac6dc9b.zip
-  ROM_NAME: OxygenOS
-  ZIP_NAME: Oneplus6Stable
+  ROM_URL: https://ota.xiaomi-miui.gr/suktew23/roms/20.9.4/xiaomi-miui-hellas-XTRV-MI8SE_20.9.4_v12-10.zip
+  ROM_NAME: MIUI
+  ZIP_NAME: Miui12Mi8Se
   TZ: Asia/Kolkata
   MIR: wet
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    if: github.event.repository.owner.id == github.event.sender.id
     steps:
        - name: Checkout
-         uses: actions/checkout@master
+         uses: actions/checkout@main
        
        - name: Clean Up
          run: |
