@@ -8,9 +8,9 @@ ROm name :  tên rom , hãy nhớ chọn đúng và phải viết chính xác t�
 build AB và A only nếu chọn true là đống ý build , false là bỏ qua. (mặc đình để là build AB còn bỏ A)
 ROm Aonly , Rom AB là tên file zip bạn muốn đặt tên
 # android 9
-ColorOS Flyme Generic MIUI Moto Nubia OneUI OxygenOS Pixel Xperia ZUI ZenUI
+Nubia, Moto, OneUI, MIUI, OxygenOS, ZenUI, Generic, Flyme, Pixel, ColorOS, ZUI, Xperia, RazerUI, VOS, RogUI
 # android 10
-Generic MIUI OxygenOS Pixel
+MIUI, OxygenOS, Generic, Pixel, JoyUI, Moto, ZenUI, ZUI, Flyme, ColorOS, VOS, OneUI, RogUI, Nubia
 # android 11
 Generic Pixel
 # Buld thôi nào
