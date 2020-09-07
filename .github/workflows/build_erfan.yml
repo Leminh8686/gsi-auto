@@ -14,9 +14,9 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://downloads.sourceforge.net/project/rmx1851/custom_recovery_StockROM_flashable_files/RMX1851CN_flashable_A06.zip?r=&ts=1599361941&use_mirror=master
-  ROM_NAME: ColorOS
-  ZIP_NAME: RealmeUi
+  ROM_URL: https://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus6TOxygen/OnePlus6TOxygen_34.J.47_GLO_047_2007171912/OnePlus6TOxygen_34_OTA_047_all_2007171912_ac6dc9b.zip
+  ROM_NAME: OxygenOS
+  ZIP_NAME: Oneplus6Stable
   TZ: Asia/Kolkata
   MIR: wet
 jobs:
