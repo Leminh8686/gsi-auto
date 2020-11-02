@@ -17,9 +17,9 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://ota.xiaomi-miui.gr/suktew23/roms/20.9.4/xiaomi-miui-hellas-XTRV-MI8SE_20.9.4_v12-10.zip
-  ROM_NAME: MIUI
-  ZIP_NAME: Miui12Mi8Se
+  ROM_URL: https://download.meizu.com/Firmware/Flyme/16xs/8.20.10.27/cn_daily/20201027003607/ee0cbdd0/update.zip
+  ROM_NAME: Flyme
+  ZIP_NAME: 16xs
   TZ: Asia/Kolkata
   MIR: wet
 jobs:
