@@ -17,9 +17,9 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://ota.xiaomi-miui.gr/suktew23/roms/20.9.4/xiaomi-miui-hellas-XTRV-MI8SE_20.9.4_v12-10.zip
-  ROM_NAME: MIUI
-  ZIP_NAME: Miui12Mi8Se
+  ROM_URL: https://bom.to/LXar158
+  ROM_NAME: OxygensOs
+  ZIP_NAME: Oxygenos
   TZ: Asia/Kolkata
   MIR: wet
 jobs:
