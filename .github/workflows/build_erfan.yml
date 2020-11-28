@@ -1,12 +1,9 @@
-name: Easy GSI..
+name: Building GSI..
 
 on:
 #  release:
 #    types: [published]
 #  push:
-#    branches:
-#      - master
-#  pull_request:
 #    branches:
 #      - master
 #    paths:
@@ -17,27 +14,18 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://bom.to/LXar158
-  ROM_NAME: OxygensOs
-  ZIP_NAME: Oxygenos
+  ROM_URL: https://185-23-180-2.ksyungslb.com/bigota.d.miui.com/20.11.23/miui_VIOLET_20.11.23_f1ef5803f1_10.0.zip?ksy_gslb_referer=https%3A%2F%2Fgithub.com%2Fleeminh888%2Fupdate_miui_ota%2Fblob%2Fmaster%2FDevelop%2FRedmi%2520Note7%2520Pro.md
+  ROM_NAME: MIUI
+  ZIP_NAME: RMN7pro
   TZ: Asia/Kolkata
   MIR: wet
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
+
     steps:
        - name: Checkout
-         uses: actions/checkout@main
-       
-       - name: Clean Up
-         run: |
-           docker rmi `docker images -q`
-           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
-           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
-           sudo -E apt-get update
-           sudo -E apt-get -y autoremove --purge
-           sudo -E apt-get clean 
+         uses: actions/checkout@master
            
        - name: Initializing environment
          run: |
@@ -45,38 +33,32 @@ jobs:
             sudo -E apt-get -qq install git openjdk-8-jdk wget
        
        - name: Clone ErfanGSI Source Code
-         run: git clone --recurse-submodules https://github.com/Pinkdoge/ErfanGSIs.git
+         run: git clone --recurse-submodules https://github.com/JamieHoSzeYui/ErfanGSIs -b curtana
        
        - name: Setting up ErfanGSI requirements
          run: |
               sudo chmod -R 777 ErfanGSIs
               cd ErfanGSIs
               sudo bash setup.sh
+              rm -rf roms/10/MIUI/debloat.sh
        
        - name: Download Stock Rom & Generate GSI
-         run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
+         run: |
+              cd ErfanGSIs
+              sudo ./url2GSI.sh $ROM_URL $ROM_NAME
+              
        
        - name: Zip Aonly and upload 
          run: |
               mkdir final
               sudo chmod -R 777 ErfanGSIs/output
-              cd ErfanGSIs/output
-              zip -r $ZIP_NAME-GSI-Aonly.7z *-Aonly-*.img
+              zip -r ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z ErfanGSIs/output/*-Aonly-*.img
               curl -sL https://git.io/file-transfer | sh
-              ./transfer $MIR $ZIP_NAME-GSI-Aonly.7z          
+              ./transfer $MIR ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z          
        - name: Zip AB and upload 
          run: |
-              cd ErfanGSIs/output
-              zip -r $ZIP_NAME-GSI-AB.7z *-AB-*.img
-              ./transfer $MIR $ZIP_NAME-GSI-AB.7z      
+              zip -r ErfanGSIs/output/$ZIP_NAME-GSI-AB.7z ErfanGSIs/output/*-AB-*.img
+              ./transfer $MIR ErfanGSIs/output/$ZIP_NAME-GSI-AB.7z      
        - name: Print build info
          run: |
               cat ErfanGSIs/output/*-Aonly-*.txt
-
-       - name: Upload Link to GitHub
-         run: |
-           git config --global user.email "19506021+Leminh8686@users.noreply.github.com"
-           git config --global user.name "Leminh8686"
-           git add link.txt
-           git commit -sm "upload link"
-           git push
