@@ -40,8 +40,7 @@ jobs:
               sudo chmod -R 777 ErfanGSIs
               cd ErfanGSIs
               sudo bash setup.sh
-              rm -rf roms/10/MIUI/debloat.sh
-       
+                  
        - name: Download Stock Rom & Generate GSI
          run: |
               cd ErfanGSIs
