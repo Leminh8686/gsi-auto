@@ -1,63 +1,84 @@
 name: Building GSI..
 
-on:
-#  release:
-#    types: [published]
-#  push:
-#    branches:
-#      - master
-#    paths:
-#      - '.config'
-#  schedule:
-#    - cron: 0 8 * * 5
-  watch:
-    types: [started]
-    
+on: [push]
+
 env:
-  ROM_URL: https://185-23-180-2.ksyungslb.com/bigota.d.miui.com/20.11.23/miui_VIOLET_20.11.23_f1ef5803f1_10.0.zip?ksy_gslb_referer=https%3A%2F%2Fgithub.com%2Fleeminh888%2Fupdate_miui_ota%2Fblob%2Fmaster%2FDevelop%2FRedmi%2520Note7%2520Pro.md
-  ROM_NAME: MIUI
-  ZIP_NAME: RMN7pro
+  ROM_URL: https://android.googleapis.com/packages/ota-api/package/9776e65996d77f1e54876b90c66fac6da68e4a63.zip
+  ROM_NAME: Generic
+  ZIP_NAME: Vos3_aris_pro_leeminh
   TZ: Asia/Kolkata
-  MIR: wet
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
        - name: Checkout
          uses: actions/checkout@master
+       
+       - name: Clean Up
+         run: |
+           docker rmi `docker images -q`
+           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
+           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
+           sudo -E apt-get update
+           sudo -E apt-get -y autoremove --purge
+           sudo -E apt-get clean 
            
        - name: Initializing environment
          run: |
             sudo -E apt-get -qq update
-            sudo -E apt-get -qq install git openjdk-8-jdk wget
+            sudo -E apt-get -qq install git openjdk-8-jdk wget expect
        
        - name: Clone ErfanGSI Source Code
-         run: git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
+         run: git clone --recurse-submodules https://github.com/Treble-Experience/ErfanGSIs-VelanGSIs.git ErfanGSIs
        
        - name: Setting up ErfanGSI requirements
          run: |
               sudo chmod -R 777 ErfanGSIs
               cd ErfanGSIs
               sudo bash setup.sh
-                  
+       
        - name: Download Stock Rom & Generate GSI
-         run: |
-              cd ErfanGSIs
-              sudo ./url2GSI.sh $ROM_URL $ROM_NAME
-              
+         run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
        
        - name: Zip Aonly and upload 
          run: |
               mkdir final
               sudo chmod -R 777 ErfanGSIs/output
-              zip -r ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z ErfanGSIs/output/*-Aonly-*.img
-              curl -sL https://git.io/file-transfer | sh
-              ./transfer $MIR ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z          
+              cd ErfanGSIs/output
+              zip -r $ZIP_NAME-GSI-Aonly.7z *-Aonly-*.img
+              expect -c " 
+              spawn sftp ${{ secrets.SFUSER }}@frs.sourceforge.net
+              expect \"yes/no\"
+              send \"yes\r\"
+              expect \"Password\"        
+              send \"${{ secrets.SFPASS }}\r\"
+              expect \"sftp> \"
+              send \"cd ${{ secrets.SFDIR }}\r\"
+              set timeout -1
+              send \"put $ZIP_NAME-GSI-Aonly.7z\r\"
+              expect \"Uploading\"
+              expect \"100%\"
+              expect \"sftp>\"
+              send \"bye\r\"
+              interact"      
        - name: Zip AB and upload 
          run: |
-              zip -r ErfanGSIs/output/$ZIP_NAME-GSI-AB.7z ErfanGSIs/output/*-AB-*.img
-              ./transfer $MIR ErfanGSIs/output/$ZIP_NAME-GSI-AB.7z      
+              cd ErfanGSIs/output
+              zip -r $ZIP_NAME-GSI-AB.7z *-AB-*.img
+              expect -c " 
+              spawn sftp ${{ secrets.SFUSER }}@frs.sourceforge.net
+              expect \"Password\"        
+              send \"${{ secrets.SFPASS }}\r\"
+              expect \"sftp> \"
+              send \"cd ${{ secrets.SFDIR }}\r\"
+              set timeout -1
+              send \"put $ZIP_NAME-GSI-AB.7z\r\"
+              expect \"Uploading\"
+              expect \"100%\"
+              expect \"sftp>\"
+              send \"bye\r\"
+              interact"
        - name: Print build info
          run: |
               cat ErfanGSIs/output/*-Aonly-*.txt
