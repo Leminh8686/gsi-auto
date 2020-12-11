@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://bigota.d.miui.com/V11.0.1.0.QFLCNXM/miui_ONCLITE_V11.0.1.0.QFLCNXM_d1f5f47261_10.0.zip
+  ROM_URL: https://bigota.d.miui.com/V12.0.1.0.QFGMIXM/miui_LAVENDERGlobal_V12.0.1.0.QFGMIXM_c3fa7eb012_10.0.zip
   ROM_NAME: MIUI
   BUILD_AB: true
   BUILD_AONLY: false
   ROM_AONLY: redmi7.7z
-  ROM_AB: redmi7AB.7z
+  ROM_AB: redminote7AB.7z
 
 jobs:
   build:
