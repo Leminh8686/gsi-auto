@@ -3,9 +3,9 @@ name: Building GSI..
 on: [push]
 
 env:
-  ROM_URL: https://android.googleapis.com/packages/ota-api/package/9776e65996d77f1e54876b90c66fac6da68e4a63.zip
+  ROM_URL: https://gensho.ftp.acc.umu.se/mirror/lineageos/full/zangyapro/20201222/lineage-16.0-20201222-nightly-zangyapro-signed.zip
   ROM_NAME: Generic
-  ZIP_NAME: Vos3_aris_pro_leeminh
+  ZIP_NAME: Vos3.7z
   TZ: Asia/Kolkata
 jobs:
   build:
